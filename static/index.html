@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+
+<body>
+<script>
+  [
+    'data-class',
+    'redux',
+    'redux-thunk',
+    'redux-saga',
+    'redux-service'
+  ].forEach((suffix) => {
+    document.write(`<div class="container"><p class="title">${suffix}</p><div id="root-${suffix}" class="root"></div></div>`)
+  })
+</script>
+</body>
+
+<script src="./generated/babel-polyfill.js"></script>
+<script src="./generated/data-class.js"></script>
+<script src="./generated/redux.js"></script>
+<script src="./generated/redux-thunk.js"></script>
+<script src="./generated/redux-saga.js"></script>
+<script src="./generated/redux-service.js"></script>
+
+</html>
