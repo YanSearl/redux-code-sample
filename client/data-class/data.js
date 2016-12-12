@@ -36,7 +36,7 @@ class Data {
     return fetchJson('/data', { token })
       .then((result) => {
         this.isPending = false
-        this.data = JSON.stringify(result)
+        this.data = result
         callback()
       })
       .catch((error) => {

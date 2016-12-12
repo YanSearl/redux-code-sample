@@ -19,7 +19,8 @@ export default class Auth extends React.Component {
   }
 
   render () {
-    if (this.props.isPending) return <div><span>...</span></div>
+    if (this.props.isPending) return <div><span>Auth Pending...</span></div>
+    if (this.props.token) return <div className="flex-row"><button onClick={this.doReset}>Do Auth Reset | token:{this.props.token}</button></div>
     const { name, password } = this.state
     return <div className="flex-column">
       <div className="flex-row">
@@ -32,7 +33,6 @@ export default class Auth extends React.Component {
       </div>
       <div className="flex-row">
         <button onClick={this.doAuth}>Do Auth</button>
-        {this.props.token && <button onClick={this.doReset}>Do Reset {this.props.token}</button>}
       </div>
     </div>
   }

@@ -1,12 +1,5 @@
 import fetchJson from '../fetchJson'
 
-function doDataFetch (dispatch, token) {
-  dispatch({ type: 'data:pending' })
-  return fetchJson('/data', { token })
-    .then((result) => { dispatch({ type: 'data:set', payload: { data: JSON.stringify(result) } }) })
-    .catch((error) => { dispatch({ type: 'error:set', payload: { error: 'Data Error' } }) })
-}
-
 function thunkAuthFetch (name, password) {
   return (dispatch) => {
     dispatch({ type: 'auth:pending' })
@@ -18,7 +11,7 @@ function thunkDataFetch (token) {
   return (dispatch) => {
     dispatch({ type: 'data:pending' })
     return fetchJson('/data', { token })
-      .then((result) => { dispatch({ type: 'data:set', payload: { data: JSON.stringify(result) } }) })
+      .then((result) => { dispatch({ type: 'data:set', payload: { data: result } }) })
       .catch((error) => { dispatch({ type: 'error:set', payload: { error: 'Data Error' } }) })
   }
 }

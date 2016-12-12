@@ -25,7 +25,7 @@ const operationMap = {
     return fetchJson('/data', payload)
       .then((result) => {
         session.isPending = false
-        session.data = JSON.stringify(result)
+        session.data = result
         dispatch({ type: 'reducer:data:update', payload: session })
       })
       .catch((error) => {
